@@ -21,9 +21,9 @@ class Product extends React.Component {
      */
     qtyFilter = (id, cart) => {
         let qty = '';
-        cart.map(item => {
-            if (id === item.id) {
-                qty = item.qty
+        cart.forEach((item) => {
+            if (item.hasOwnProperty('id') && id === item.id) {
+                return qty = item.qty
             }
         });
         return qty;

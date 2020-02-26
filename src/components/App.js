@@ -19,7 +19,7 @@ class App extends React.Component {
                 filterSelectedColour: '',
                 filterColours: [],
             },
-            loadingProducts: true
+            loadingProducts: true,
         }
     }
 
@@ -136,18 +136,22 @@ class App extends React.Component {
 
     calculateTotal = (cart = []) => {
         let total = 0;
-        cart.map((product) => {
-            total = total + (product.qty * product.price);
+        cart.forEach((product) => {
+            if (product.hasOwnProperty('qty') && product.hasOwnProperty('price')) {
+                total = total + (product.qty * product.price);
+            }
         });
-        return this.round(total, 2);
+        return this.round(parseFloat(total), 2);
     }
 
     calculateQty = (cart = []) => {
         let total = 0;
-        cart.map((product) => {
-            total = total + product.qty;
+        cart.forEach((product) => {
+            if (product.hasOwnProperty('qty')) {
+                total = total + product.qty;
+            }
         });
-        return total;
+        return parseInt(total);
     }
 
     round = (value, precision) => {
