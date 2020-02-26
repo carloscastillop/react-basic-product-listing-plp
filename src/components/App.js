@@ -93,14 +93,16 @@ class App extends React.Component {
             const newObj = Object.assign({}, product);
             if (newObj.id === id) {
                 if (option === 'increase') {
-                    newObj.qty = newObj.qty + 1
+                    newObj.qty = newObj.qty + 1;
+                    updated = true;
                 } else if (option === 'decrease') {
-                    newObj.qty = newObj.qty - 1
+                    newObj.qty = newObj.qty - 1;
+                    updated = true;
                 } else {
                     //remove
-                    newObj.qty = 0
+                    newObj.qty = 0;
+                    updated = true;
                 }
-                updated = true;
                 if (newObj.qty < 1) {
                     cartPurge.push(id);
                 }
@@ -112,8 +114,8 @@ class App extends React.Component {
         }
 
         if (cartPurge.length > 0) {
-            newCart = cartPurge.map((id) => {
-                return this.removeProductFromCart(id, newCart);
+            cartPurge.forEach((idToDel) => {
+                return this.removeProductFromCart(idToDel, newCart);
             });
         }
 
