@@ -22,7 +22,7 @@ class Product extends React.Component {
     qtyFilter = (id, cart) => {
         let qty = '';
         cart.map(item => {
-            if(id === item.id){
+            if (id === item.id) {
                 qty = item.qty
             }
         });
@@ -32,20 +32,23 @@ class Product extends React.Component {
     render() {
         const {product, cart} = this.props;
         const qty = this.qtyFilter(product.id, cart);
+        const disabledState = (qty === '') ? true : false;
 
         return (
             <React.Fragment>
-                <div className="col-12 col-lg-6">
-                    <div className="card mb-4" data-product-id={product.id}>
+                <div className="col-12 col-lg-6 mb-4">
+                    <div className="card h-100 " data-product-id={product.id}>
                         <div className="row no-gutters">
                             <div className="col-md-4">
-                                <img src={product.img} className="card-img" alt="{product.name}"/>
+                                <img src={product.img} className="card-img card-img-left" alt="{product.name}"/>
                             </div>
                             <div className="col-md-8">
                                 <div className="card-body">
-                                    <h2 className="h4 card-title">#{product.id}{product.name}</h2>
-                                    <p className="text-muted small">{product.colour}</p>
-                                    <p className="price">{Constant.CURRENCY}{product.price}</p>
+                                    <div className="productInfo mb-3">
+                                        <h2 className="h3 card-title">{product.name}</h2>
+                                        <p className="text-muted small">{product.colour}</p>
+                                        <p className="price">{Constant.CURRENCY}{product.price}</p>
+                                    </div>
                                     <div className="qtyContainer mb-3 text-center">
                                         <div className="input-group">
                                             <div className="input-group-prepend">
@@ -53,6 +56,7 @@ class Product extends React.Component {
                                                     onClick={() => this.updateCart('decrease', product.id, product.price)}
                                                     className="btn btn-outline-secondary"
                                                     type="button"
+                                                    disabled={disabledState}
                                                 >
                                                     <i className="fas fa-minus"></i>
                                                 </button>
@@ -77,6 +81,7 @@ class Product extends React.Component {
                                         <button
                                             onClick={() => this.updateCart('remove', product.id, product.price)}
                                             className="btn btn-link btn-sm"
+                                            disabled={disabledState}
                                         >
                                             Remove
                                         </button>
