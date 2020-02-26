@@ -26,13 +26,13 @@ class Product extends React.Component {
                 return qty = item.qty
             }
         });
-        return qty;
+        return (qty > 0)?qty : '';
     }
 
     render() {
         const {product, cart} = this.props;
         const qty = this.qtyFilter(product.id, cart);
-        const disabledState = (qty === '') ? true : false;
+        const disabledState = (qty === '' || qty  < 1) ? true : false;
 
         return (
             <React.Fragment>

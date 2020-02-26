@@ -113,7 +113,7 @@ class App extends React.Component {
             newCart.push({id: id, qty: 1, price: price});
         }
 
-        if (cartPurge.length > 0) {
+        if (cartPurge) {
             cartPurge.forEach((idToDel) => {
                 return this.removeProductFromCart(idToDel, newCart);
             });
