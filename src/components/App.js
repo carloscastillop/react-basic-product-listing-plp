@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import * as Constant from '../Constants';
-
+import ErrorBoundary from './ErrorBoundary';
 import Product from './Product';
 import Header from './Header';
 import Filter from './Filters';
@@ -111,9 +111,11 @@ class App extends React.Component {
             newCart.push({id: id, qty: 1, price: price});
         }
 
-        cartPurge.map((id) => {
-            newCart = this.removeProductFromCart(id, newCart);
-        });
+        if (cartPurge.length > 0) {
+            newCart = cartPurge.map((id) => {
+                return this.removeProductFromCart(id, newCart);
+            });
+        }
 
         this.setState({
             cart: newCart
@@ -132,7 +134,7 @@ class App extends React.Component {
         });
     }
 
-    calculateTotal = (cart) => {
+    calculateTotal = (cart = []) => {
         let total = 0;
         cart.map((product) => {
             total = total + (product.qty * product.price);
@@ -140,7 +142,7 @@ class App extends React.Component {
         return this.round(total, 2);
     }
 
-    calculateQty = (cart) => {
+    calculateQty = (cart = []) => {
         let total = 0;
         cart.map((product) => {
             total = total + product.qty;
@@ -159,39 +161,41 @@ class App extends React.Component {
         const total = this.calculateTotal(cart);
         const qty = this.calculateQty(cart);
         return (
-            <div className="App">
-                <Header/>
-                <Filter
-                    colours={filters.filterColours}
-                    filterColours={filters.filterColours}
-                    setSelectedColour={this.setSelectedColour}
-                />
-                <div className="productContainer container">
-                    {loadingProducts &&
-                    <div className="p-5 text-center">
-                        <i className="fas fa-spinner fa-spin fa-5x"></i>
-                    </div>
-                    }
-                    <div className="row">
-                        {
-                            productList.map((product) => {
-                                return (
-                                    <Product
-                                        key={'product-' + product.id}
-                                        product={product}
-                                        cart={cart}
-                                        updateCart={this.updateCart}
-                                    />
-                                )
-                            })
+            <ErrorBoundary>
+                <div className="App">
+                    <Header/>
+                    <Filter
+                        colours={filters.filterColours}
+                        filterColours={filters.filterColours}
+                        setSelectedColour={this.setSelectedColour}
+                    />
+                    <div className="productContainer container">
+                        {loadingProducts &&
+                        <div className="p-5 text-center">
+                            <i className="fas fa-spinner fa-spin fa-5x"></i>
+                        </div>
                         }
+                        <div className="row">
+                            {
+                                productList.map((product) => {
+                                    return (
+                                        <Product
+                                            key={'product-' + product.id}
+                                            product={product}
+                                            cart={cart}
+                                            updateCart={this.updateCart}
+                                        />
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
+                    <Basket
+                        total={total}
+                        qty={qty}
+                    />
                 </div>
-                <Basket
-                    total={total}
-                    qty={qty}
-                />
-            </div>
+            </ErrorBoundary>
         );
     }
 }
