@@ -74,7 +74,12 @@ class Product extends React.Component {
                                                 </button>
                                             </div>
                                         </div>
-                                        <button className="btn btn-link btn-sm">Remove</button>
+                                        <button
+                                            onClick={() => this.updateCart('remove', product.id, product.price)}
+                                            className="btn btn-link btn-sm"
+                                        >
+                                            Remove
+                                        </button>
                                     </div>
                                 </div>
                             </div>

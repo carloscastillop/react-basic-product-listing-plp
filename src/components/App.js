@@ -92,7 +92,14 @@ class App extends React.Component {
         let newCart = cart.map((product, index) => {
             const newObj = Object.assign({}, product);
             if (newObj.id === id) {
-                newObj.qty = (option === 'increase') ? newObj.qty + 1 : newObj.qty - 1;
+                if (option === 'increase') {
+                    newObj.qty = newObj.qty + 1
+                } else if (option === 'decrease') {
+                    newObj.qty = newObj.qty - 1
+                } else {
+                    //remove
+                    newObj.qty = 0
+                }
                 updated = true;
                 if (newObj.qty < 1) {
                     cartPurge.push(id);
@@ -105,7 +112,7 @@ class App extends React.Component {
         }
 
         cartPurge.map((id) => {
-            newCart = this.removeCart(id, newCart);
+            newCart = this.removeProductFromCart(id, newCart);
         });
 
         this.setState({
@@ -119,16 +126,29 @@ class App extends React.Component {
      * @param cart
      * @returns {*}
      */
-    removeCart = (id, cart) => {
+    removeProductFromCart = (id, cart) => {
         return cart.filter((prod) => {
             return prod.id !== id;
         });
     }
 
+    calculateTotal = (cart) => {
+        let total = 0;
+        cart.map((product) => {
+            total = total + (product.qty * product.price);
+        });
+        return this.round(total, 2);
+    }
+
+    round = (value, precision) => {
+        let multiplier = Math.pow(10, precision || 0);
+        return Math.round(value * multiplier) / multiplier;
+    }
+
     render() {
         const {loadingProducts, products, filters, cart} = this.state;
-        let productList = this.filterProductList(filters.filterSelectedColour, products);
-
+        const productList = this.filterProductList(filters.filterSelectedColour, products);
+        const total = this.calculateTotal(cart);
         return (
             <div className="App">
                 <Header/>
@@ -158,7 +178,7 @@ class App extends React.Component {
                         }
                     </div>
                 </div>
-                <Basket/>
+                <Basket total={total}/>
             </div>
         );
     }
