@@ -140,6 +140,14 @@ class App extends React.Component {
         return this.round(total, 2);
     }
 
+    calculateQty = (cart) => {
+        let total = 0;
+        cart.map((product) => {
+            total = total + product.qty;
+        });
+        return total;
+    }
+
     round = (value, precision) => {
         let multiplier = Math.pow(10, precision || 0);
         return Math.round(value * multiplier) / multiplier;
@@ -149,6 +157,7 @@ class App extends React.Component {
         const {loadingProducts, products, filters, cart} = this.state;
         const productList = this.filterProductList(filters.filterSelectedColour, products);
         const total = this.calculateTotal(cart);
+        const qty = this.calculateQty(cart);
         return (
             <div className="App">
                 <Header/>
@@ -178,7 +187,10 @@ class App extends React.Component {
                         }
                     </div>
                 </div>
-                <Basket total={total}/>
+                <Basket
+                    total={total}
+                    qty={qty}
+                />
             </div>
         );
     }

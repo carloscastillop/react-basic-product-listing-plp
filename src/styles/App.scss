@@ -36,7 +36,7 @@ form {
   background-color: #f5f5f5;
 
   .total {
-    margin-right: 20px;
+
   }
 }
 
@@ -44,5 +44,11 @@ form {
   @media (min-width: #{$grid-breakpoints-md - 1}) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+  }
+}
+
+.btn {
+  &:disabled {
+    cursor: not-allowed;
   }
 }
