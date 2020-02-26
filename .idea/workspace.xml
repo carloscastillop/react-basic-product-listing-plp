@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea9eac9f-0212-4fd4-aee3-66bd66656295" name="Default Changelist" comment="Added Qty counter for Basket Component">
+    <list default="true" id="ea9eac9f-0212-4fd4-aee3-66bd66656295" name="Default Changelist" comment="Added Readme file">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="336">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+              <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -216,7 +214,7 @@
       <updated>1582581793863</updated>
       <workItem from="1582581795134" duration="7700000" />
       <workItem from="1582633073921" duration="574000" />
-      <workItem from="1582660958803" duration="16602000" />
+      <workItem from="1582660958803" duration="16681000" />
     </task>
     <task id="LOCAL-00001" summary="Added Axios">
       <created>1582661420732</created>
@@ -267,11 +265,18 @@
       <option name="project" value="LOCAL" />
       <updated>1582678117790</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added Readme file">
+      <created>1582678179917</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1582678179917</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24876000" />
+    <option name="totallyTimeSpent" value="24955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="15" y="45" width="1226" height="741" extended-state="0" />
@@ -309,7 +314,8 @@
     <MESSAGE value="ignored .idea IDE" />
     <MESSAGE value="Added Disabled state to decrease qty, some styles" />
     <MESSAGE value="Added Qty counter for Basket Component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Qty counter for Basket Component" />
+    <MESSAGE value="Added Readme file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Readme file" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/robots.txt">
@@ -443,7 +449,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
         </state>
       </provider>
     </entry>
