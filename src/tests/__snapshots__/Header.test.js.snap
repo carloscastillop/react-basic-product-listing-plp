@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<header
+  className="my-3"
+  data-testid="header"
+>
+  <div
+    className="container"
+  >
+    <nav
+      className="navbar navbar-light bg-light"
+    >
+      <span
+        className="navbar-brand mb-0 h1"
+      >
+        <i
+          className="fas fa-tshirt"
+        />
+         Clothing
+      </span>
+    </nav>
+  </div>
+</header>
+`;

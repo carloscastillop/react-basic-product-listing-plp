@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot A 1`] = `
+<div
+  className="basketContainer mt-auto py-3 fixed-bottom"
+>
+  <div
+    className="container"
+  >
+    <p
+      className="d-inline-block m-0"
+      data-testid="qtyCounter"
+    >
+      <i
+        className="fas fa-shopping-bag fa-2x mr-1"
+      />
+      <span>
+        x
+        0
+      </span>
+       item
+      <span>
+        s
+      </span>
+    </p>
+    <p
+      className="total h3 float-right m-0"
+      data-testid="totalSum"
+    >
+      Total: 
+      <span>
+        £
+        <strong>
+          0
+        </strong>
+      </span>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`matches snapshot B 1`] = `
+<div
+  className="basketContainer mt-auto py-3 fixed-bottom"
+>
+  <div
+    className="container"
+  >
+    <p
+      className="d-inline-block m-0"
+      data-testid="qtyCounter"
+    >
+      <i
+        className="fas fa-shopping-bag fa-2x mr-1"
+      />
+      <span>
+        x
+        1
+      </span>
+       item
+    </p>
+    <p
+      className="total h3 float-right m-0"
+      data-testid="totalSum"
+    >
+      Total: 
+      <span>
+        £
+        <strong>
+          10
+        </strong>
+      </span>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`matches snapshot C 1`] = `
+<div
+  className="basketContainer mt-auto py-3 fixed-bottom"
+>
+  <div
+    className="container"
+  >
+    <p
+      className="d-inline-block m-0"
+      data-testid="qtyCounter"
+    >
+      <i
+        className="fas fa-shopping-bag fa-2x mr-1"
+      />
+      <span>
+        x
+        10
+      </span>
+       item
+      <span>
+        s
+      </span>
+    </p>
+    <p
+      className="total h3 float-right m-0"
+      data-testid="totalSum"
+    >
+      Total: 
+      <span>
+        £
+        <strong>
+          100
+        </strong>
+      </span>
+    </p>
+  </div>
+</div>
+`;

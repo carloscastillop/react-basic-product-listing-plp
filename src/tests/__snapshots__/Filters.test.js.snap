@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter matches snapshot A 1`] = `
+<form
+  className="my-4"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        className="sr-only"
+        htmlFor="colourFilterSelect"
+      >
+        Colour filter
+      </label>
+      <select
+        className="form-control"
+        data-testid="colourFilterSelect"
+        id="colourFilterSelect"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        >
+          Filter by colour
+        </option>
+        <option
+          value="Red"
+        >
+          Red
+        </option>
+        <option
+          value="Green"
+        >
+          Green
+        </option>
+        <option
+          value="Blue"
+        >
+          Blue
+        </option>
+      </select>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Filter matches snapshot empty filter B 1`] = `
+<form
+  className="my-4"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        className="col-form-label sr-only"
+        data-testid="colourFilterSelectEmpty"
+      >
+        No colour filters available
+      </label>
+    </div>
+  </div>
+</form>
+`;

@@ -19,11 +19,15 @@ class Filters extends React.Component {
             <React.Fragment>
                 <form className="my-4">
                     <div className="container">
-                        {colours.length > 0 &&
+                        {(colours && colours.length > 0) &&
                         <div className="form-group">
-                            <label htmlFor="exampleFormControlSelect1" className="sr-only">Colour filter</label>
-                            <select onChange={this.setSelectedColour} className="form-control"
-                                    id="exampleFormControlSelect1">
+                            <label htmlFor="colourFilterSelect" className="sr-only">Colour filter</label>
+                            <select
+                                onChange={this.setSelectedColour}
+                                className="form-control"
+                                id="colourFilterSelect"
+                                data-testid="colourFilterSelect"
+                            >
                                 <option value={''}>Filter by colour</option>
                                 {
                                     colours.map((colour, key) => {
@@ -39,7 +43,14 @@ class Filters extends React.Component {
                                 }
                             </select>
                         </div>
-
+                        }
+                        {(!colours || colours.length === 0) &&
+                            <div className="form-group">
+                                <label
+                                    data-testid="colourFilterSelectEmpty"
+                                    className="col-form-label sr-only"
+                                >No colour filters available</label>
+                            </div>
                         }
                     </div>
                 </form>

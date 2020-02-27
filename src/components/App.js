@@ -131,6 +131,7 @@ class App extends React.Component {
      * @returns {*}
      */
     removeProductFromCart = (id, cart) => {
+        console.log([id, cart])
         return cart.filter((prod) => {
             return prod.id !== id;
         });
@@ -169,19 +170,25 @@ class App extends React.Component {
         return (
             <ErrorBoundary>
                 <div className="App">
-                    <Header/>
+                    <Header data-testid="appHeader"/>
                     <Filter
                         colours={filters.filterColours}
-                        filterColours={filters.filterColours}
                         setSelectedColour={this.setSelectedColour}
+                        data-testid="appFilter"
                     />
                     <div className="productContainer container">
                         {loadingProducts &&
-                        <div className="p-5 text-center">
+                        <div
+                            className="p-5 text-center"
+                            data-testid="appLoadingProducts"
+                        >
                             <i className="fas fa-spinner fa-spin fa-5x"></i>
                         </div>
                         }
-                        <div className="row">
+                        <div
+                            className="row"
+                            data-testid="appProductContainer"
+                        >
                             {
                                 productList.map((product) => {
                                     return (
@@ -190,6 +197,7 @@ class App extends React.Component {
                                             product={product}
                                             cart={cart}
                                             updateCart={this.updateCart}
+                                            data-testid="appProduct"
                                         />
                                     )
                                 })
@@ -199,6 +207,7 @@ class App extends React.Component {
                     <Basket
                         total={total}
                         qty={qty}
+                        data-testid="appBasket"
                     />
                 </div>
             </ErrorBoundary>

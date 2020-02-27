@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot A 1`] = `
+<div
+  className="col-12 col-lg-6 mb-4"
+>
+  <div
+    className="card h-100"
+    data-product-id={1}
+    data-testid="productCard"
+  >
+    <div
+      className="row no-gutters"
+    >
+      <div
+        className="col-md-4"
+      >
+        <img
+          alt="Black Sheet Strappy Textured Glitter Bodycon Dress"
+          className="card-img card-img-left"
+          data-testid="productCardImage"
+          src="http://cdn-img.prettylittlething.com/9/0/a/a/90aa90903a135ee59594f47c7685aa7ef3046e44_cly8063_1.jpg?imwidth=1024"
+        />
+      </div>
+      <div
+        className="col-md-8"
+      >
+        <div
+          className="card-body"
+        >
+          <div
+            className="productInfo mb-3"
+          >
+            <h2
+              className="h3 card-title"
+              data-testid="productCardTitle"
+            >
+              Black Sheet Strappy Textured Glitter Bodycon Dress
+            </h2>
+            <p
+              className="text-muted small"
+              data-testid="productCardColour"
+            >
+              Black
+            </p>
+            <p
+              className="price"
+              data-testid="productCardPrice"
+            >
+              £
+              10
+            </p>
+          </div>
+          <div
+            className="qtyContainer mb-3 text-center"
+          >
+            <div
+              className="input-group"
+            >
+              <div
+                className="input-group-prepend"
+              >
+                <button
+                  className="btn btn-outline-secondary"
+                  data-testid="productCardDecrease"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <i
+                    className="fas fa-minus"
+                  />
+                </button>
+              </div>
+              <input
+                className="form-control text-center"
+                data-testid="productCardQtyInput"
+                placeholder="Qty"
+                readOnly={true}
+                type="text"
+                value={10}
+              />
+              <div
+                className="input-group-append"
+              >
+                <button
+                  className="btn btn-outline-secondary"
+                  data-testid="productCardIncrease"
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <i
+                    className="fas fa-plus"
+                  />
+                </button>
+              </div>
+            </div>
+            <button
+              className="btn btn-link btn-sm"
+              disabled={false}
+              onClick={[Function]}
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
