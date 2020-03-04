@@ -89,5 +89,11 @@ describe('<Product /> functions', () => {
         const inst = wrapper.getInstance();
         expect(inst.qtyFilter(product, cart)).toBe(10);
     });
-});
 
+    it('updateCart', () => {
+        const {option, id, price} = [{option: 'remove', id: 1, price: 10}];
+        const wrapper = renderer.create(<Product/>);
+        const inst = wrapper.getInstance();
+        //inst.updateCart(option, id, price);
+    });
+});

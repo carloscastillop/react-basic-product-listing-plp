@@ -3,6 +3,11 @@ import ReactDOM from 'react-dom';
 import {render, cleanup} from '@testing-library/react';
 import '@testing-library/jest-dom';
 import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
+import { act } from 'react-dom/test-utils';
+
+
+
 
 import App from '../components/App';
 
@@ -62,4 +67,31 @@ describe('<App /> functions', () => {
         const test = inst.calculateTotal(cart);
         expect(test).toBe(resultExp);
     });
+
+    it('setSelectedColour fn', () => {
+        const wrapper = renderer.create(<App/>);
+        const inst = wrapper.getInstance();
+        const test = inst.setSelectedColour('Red');
+    });
+
+
+    let container;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+    });
+
+    afterEach(() => {
+        document.body.removeChild(container);
+        container = null;
+    });
+
+    it('setSelectedColour fn', () => {
+        act(() => {
+            ReactDOM.render(<App />, container);
+        });
+
+    });
+
 });

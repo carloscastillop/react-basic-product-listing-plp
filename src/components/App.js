@@ -131,7 +131,6 @@ class App extends React.Component {
      * @returns {*}
      */
     removeProductFromCart = (id, cart) => {
-        console.log([id, cart])
         return cart.filter((prod) => {
             return prod.id !== id;
         });
